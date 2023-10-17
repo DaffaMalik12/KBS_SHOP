@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container max-w-screen-xl transition-all md:transition-all lg:transition-all">
+    <div class="container max-w-screen-xl transition-all md:transition-all lg:transition-all overflow-x-hidden">
         <!-- Navbar -->
         <nav class="bg-[#DEDEDE]" data-aos="fade-down">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
