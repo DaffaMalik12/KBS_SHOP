@@ -56,8 +56,6 @@
                         <canvas id="myChart" width="600" height="250"></canvas>
                     </div>
                 </div>
-
-                
             </div>
         </div>
     </main>
