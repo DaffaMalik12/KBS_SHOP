@@ -33,7 +33,7 @@
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="#" class="flex items-center">
                     <img src="../img/Screenshot_2023-09-11_182950-removebg-preview.png" class="h-8 mr-3" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap ">KBS_SHOP</span>
+                    <span class="self-center text-2xl font-bold font-myFont whitespace-nowrap ">KBS_SHOP</span>
                 </a>
                 <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-dropdown" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
@@ -82,7 +82,7 @@
                 <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl lg:px-16">KBS_SHOP</h1>
                 <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:w-3/4">Apa yang bikin kita beda? Selain produk berkualitas tinggi, kita juga punya stok barang yang selalu ready. Jadi, kamu bisa belanja dengan tenang tanpa harus khawatir kehabisan. Plus, harganya juga bersahabat banget sama dompet kamu. Gak ada lagi alasan buat gak upgrade peralatan teknologimu!</p>
                 <div class=" flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                    <a href="#" class="inline-flex lg:ml-16 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-[#FD6D6D] FD6D6D hover:bg-red-600 focus:ring-4 focus:ring-blue-300 ">
+                    <a href="#" class="inline-flex lg:ml-16 items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-[#FD6D6D] FD6D6D hover:bg-red-600 focus:ring-4 focus:ring-blue-300 ">
                         Learn More
                         <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -100,66 +100,66 @@
         <section class="container max-w-full max-h-full lg:pb-10">
             <h3 class="text-center font-base text-lg pb-1 pt-8 font-myFont lg:text-center">Pemilihan Produk</h3>
             <h2 class="text-center font-bold text-2xl pb-12 font-myFont lg:text-center">STOK BARANG KAMI</h2>
-            <div class="px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
+            <div class="px-6 mb-10 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
             <!-- Card 1 -->
-            <div  class="flex flex-col items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-right">
+            <div  class="flex flex-col mb-8 items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-right">
                 <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/car charger.jpg" alt="">
                 <div class="flex flex-col justify-between p-4  leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Car Charger</h5>
                     <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                     <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-white hover:bg-purple-700">
+                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
                                 Buy
                         </a>   
-                        <div class="kotak w-16 h-10 inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
+                        <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
                             <h2>15</h2>
                         </div>     
                     </div>
                 </div>
             </div>
             <!-- Card 2 -->
-            <div  class="flex flex-col items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-right">
+            <div  class="flex flex-col mb-8 items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-right">
                 <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/headset.jpg" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Headphone</h5>
                     <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                     <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-white hover:bg-purple-700">
+                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
                                 Buy
                         </a>   
-                        <div class="kotak w-16 h-10 inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
+                        <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
                             <h2>15</h2>
                         </div>     
                     </div>
                 </div>
             </div>
             <!-- Card 3 -->
-            <div  class="flex flex-col items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-left">
+            <div  class="flex flex-col mb-8 items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-left">
                 <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/otg usb.jpg" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">OTG USB</h5>
                     <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                     <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-white hover:bg-purple-700">
+                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
                                 Buy
                         </a>   
-                        <div class="kotak w-16 h-10 inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
+                        <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
                             <h2>15</h2>
                         </div>     
                     </div>
                 </div>
             </div>
             <!-- Card 4 -->
-            <div class="flex flex-col items-cent bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 " data-aos="fade-left">
+            <div class="flex flex-col mb-8 items-cent bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 " data-aos="fade-left">
                 <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/usb.jpg" alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">USB Cable</h5>
                     <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                     <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-white hover:bg-purple-700">
+                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
                                 Buy
                         </a>   
-                        <div class="kotak w-16 h-10 inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
+                        <div class="kotak w-16 h-10 inline-flex justify-center ml-5 hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
                             <h2>15</h2>
                         </div>     
                     </div>
@@ -171,207 +171,88 @@
 
         <!-- Jumbotron Review Customer -->
         <section class="bg-[#D9D9D9]">
-            <h2 class="text-black font-bold font-sans px-5 py-5 text-2xl">Review Customer</h2>
-            <hr class="w-30  mx-5">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
+            <h3 class="text-center font-poppins text-sm  pt-10">Pengulasan Pada Toko Kami</h3>
+            <h2 class="text-black font-bold text-center font-poppins px-5 py-1  text-2xl">Review Customer</h2>
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 lg:-mt-5">
                 <!-- Swiper -->
                 <div class="swiper mySwiper" data-aos="fade-right">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                            <div class="block rounded-lg lg:w-10/12 lg:h-3/4 bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+                                <div class="border-b-2 border-slate-300 px-6 py-3 ">
                                     Rating Customer
                                 </div>
                                 <div class="p-6">
                                     <img src="../img/foto cowo 1.jpeg" alt="" class="rounded-full w-24 mx-auto">
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
+                                    <p class="mb-4 text-base mt-5  text-neutral-600 ">
+                                    Barangnya Bagus Worth  untuk dibeli 
                                     </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
+                                    <div class="inline-block  rounded bg-primary px-6 pb-2 pt-2.5 text-xl font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                    ⭐⭐⭐⭐⭐
+                                    </div>
                                 </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                                <div class="border-t-2 border-slate-300 px-6 py-3 ">
                                     2 days ago
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                        <div class="block rounded-lg lg:w-10/12 lg:h-3/4 bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+                                <div class="border-b-2 border-slate-300 px-6 py-3 ">
                                     Rating Customer
                                 </div>
                                 <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                    <img src="../img/foto cewe 1.jpeg" alt="" class="rounded-full w-24 mx-auto">
+                                    <p class="mb-4 text-base mt-5 text-neutral-600 ">
                                         With supporting text below as a natural lead-in to additional
                                         content.
                                     </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
+                                    <div  class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xl font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
                                 </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                                <div class="border-t-2 border-slate-300 px-6 py-3 ">
                                     2 days ago
                                 </div>
                             </div>    
                         </div>
                         <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                        <div class="block rounded-lg lg:w-10/12 lg:h-3/4 bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+                                <div class="border-b-2 border-slate-300 px-6 py-3 ">
                                     Rating Customer
                                 </div>
                                 <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
+                                    <img src="../img/foto cowo 2.jpeg" alt="" class="rounded-full w-24 mx-auto">
+                                    <p class="mb-4 text-base mt-5 text-center text-neutral-600 ">
+                                    Barangnya Bagus Worth  untuk dibeli 
                                     </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
+                                    <div  class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xl font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
                                 </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                                <div class="border-t-2 border-slate-300 px-6 py-3 ">
                                     2 days ago
                                 </div>
                             </div>    
                         </div>
                         <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                        <div class="block rounded-lg lg:w-10/12 lg:h-3/4 bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+                                <div class="border-b-2 border-slate-300 px-6 py-3 ">
                                     Rating Customer
                                 </div>
                                 <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
+                                    <img src="../img/foto cewe 2.jpeg" alt="" class="rounded-full w-24 mx-auto">
+                                    <p class="mb-4 text-base mt-5 text-center text-neutral-600 ">
+                                    Barangnya Bagus Worth  untuk dibeli 
                                     </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
+                                    <div class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xl font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                        ⭐⭐⭐⭐⭐
+                                    </div>
                                 </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
+                                <div class="border-t-2 border-slate-300 px-6 py-3 ">
                                     2 days ago
                                 </div>
                             </div>   
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    Rating Customer
-                                </div>
-                                <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                    </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
-                                </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    2 days ago
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    Rating Customer
-                                </div>
-                                <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                    </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
-                                </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    2 days ago
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    Rating Customer
-                                </div>
-                                <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                    </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
-                                </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    2 days ago
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    Rating Customer
-                                </div>
-                                <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                    </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
-                                </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    2 days ago
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="block rounded-lg bg-white text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    Rating Customer
-                                </div>
-                                <div class="p-6">
-                                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                                        Special title treatment
-                                    </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        With supporting text below as a natural lead-in to additional
-                                        content.
-                                    </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                    </button>
-                                </div>
-                                <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-                                    2 days ago
-                                </div>
-                            </div> 
                         </div>
                     </div>
                     <div class="swiper-button-next"></div>
