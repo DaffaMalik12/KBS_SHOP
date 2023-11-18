@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Admin Page</title>
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -103,6 +102,14 @@
                                                     <form action="#" class="p-4 md:p-5">
                                                         <div class="grid gap-4 mb-4 grid-cols-2">
                                                             <div class="col-span-2">
+                                                                <div class="max-w-md mx-auto mb-3">
+                                                                    <h2 class="text-2xl font-semibold mb-5">Picture</h2>
+                                                                    <input type="file" id="imageInput2" class="mb-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
+                                                                    <div class="mt-5">
+                                                                        <h3 class="text-xl font-semibold mb-2">Preview:</h3>
+                                                                        <img id="imagePreview2" class="max-w-full h-auto">
+                                                                    </div>
+                                                                </div>
                                                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
                                                                 <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Type product name" required="">
                                                             </div>
@@ -174,14 +181,65 @@
 
                                     <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap ">
                                         <div class="flex items-center space-x-4">
-                                            <button type="button"  aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-800">
+                                            <button type="button" data-modal-target="edit-modal" data-modal-toggle="edit-modal" aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                                                 </svg>
                                                 Edit
                                             </button>
-                                            
+                                            <!-- Edit Pop up -->
+                                            <div id="edit-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                                <div class="relative p-4 w-full max-w-md max-h-full">
+                                                    <!-- Modal content -->
+                                                    <div class="relative bg-white rounded-lg shadow ">
+                                                        <!-- Modal header -->
+                                                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                                                            <h3 class="text-lg font-semibold text-gray-900 ">
+                                                                Edit Product
+                                                            </h3>
+                                                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-toggle="edit-modal">
+                                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                                </svg>
+                                                                <span class="sr-only">Close modal</span>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Modal body -->
+                                                        <form action="#" class="p-4 md:p-5">
+                                                            <div class="grid gap-4 mb-4 grid-cols-2">
+                                                                <div class="col-span-2">
+                                                                    <div class="max-w-md mx-auto mb-3">
+                                                                        <h2 class="text-2xl font-semibold mb-5">Picture</h2>
+                                                                        <input type="file" id="imageInput3" class="mb-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
+                                                                        <div class="mt-5">
+                                                                            <h3 class="text-xl font-semibold mb-2">Preview:</h3>
+                                                                            <img id="imagePreview3" class="max-w-full h-auto">
+                                                                        </div>
+                                                                    </div>
+                                                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                                                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Type product name" required="">
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Product Description</label>
+                                                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"></textarea>
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="price" class="text-sm font-medium text-gray-900 ">Stock</label>
+                                                                    <input type="number" name="price" id="price" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukkan Stok Barang" required="">
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                                                </svg>
+                                                                Edit Product
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -259,14 +317,65 @@
 
                                     <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap ">
                                         <div class="flex items-center space-x-4">
-                                            <button type="button" data-drawer-target="drawer-update-product" data-drawer-show="drawer-update-product" aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-800">
+                                            <button type="button" data-modal-target="edit-modal1" data-modal-toggle="edit-modal1" data-drawer-target="drawer-update-product" data-drawer-show="drawer-update-product" aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                                                 </svg>
                                                 Edit
                                             </button>
-
+                                            <!-- Edit Pop up -->
+                                            <div id="edit-modal1" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                                <div class="relative p-4 w-full max-w-md max-h-full">
+                                                    <!-- Modal content -->
+                                                    <div class="relative bg-white rounded-lg shadow ">
+                                                        <!-- Modal header -->
+                                                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                                                            <h3 class="text-lg font-semibold text-gray-900 ">
+                                                                Edit Product
+                                                            </h3>
+                                                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-toggle="edit-modal1">
+                                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                                </svg>
+                                                                <span class="sr-only">Close modal</span>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Modal body -->
+                                                        <form action="#" class="p-4 md:p-5">
+                                                            <div class="grid gap-4 mb-4 grid-cols-2">
+                                                                <div class="col-span-2">
+                                                                    <div class="max-w-md mx-auto mb-3">
+                                                                        <h2 class="text-2xl font-semibold mb-5">Picture</h2>
+                                                                        <input type="file" id="imageInput4" class="mb-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
+                                                                        <div class="mt-5">
+                                                                            <h3 class="text-xl font-semibold mb-2">Preview:</h3>
+                                                                            <img id="imagePreview4" class="max-w-full h-auto">
+                                                                        </div>
+                                                                    </div>
+                                                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                                                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Type product name" required="">
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Product Description</label>
+                                                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"></textarea>
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="price" class="text-sm font-medium text-gray-900 ">Stock</label>
+                                                                    <input type="number" name="price" id="price" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukkan Stok Barang" required="">
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                                                </svg>
+                                                                Edit Product
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -343,14 +452,66 @@
 
                                     <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap ">
                                         <div class="flex items-center space-x-4">
-                                            <button type="button" data-drawer-target="drawer-update-product" data-drawer-show="drawer-update-product" aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-900 ">
+                                            <button type="button" data-modal-target="edit-modal2" data-modal-toggle="edit-modal2" data-drawer-target="drawer-update-product" data-drawer-show="drawer-update-product" aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-900 ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                                                 </svg>
                                                 Edit
                                             </button>
-                                            <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal"  class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                                            <!-- Edit Pop up -->
+                                            <div id="edit-modal2" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                                <div class="relative p-4 w-full max-w-md max-h-full">
+                                                    <!-- Modal content -->
+                                                    <div class="relative bg-white rounded-lg shadow ">
+                                                        <!-- Modal header -->
+                                                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                                                            <h3 class="text-lg font-semibold text-gray-900 ">
+                                                                Edit Product
+                                                            </h3>
+                                                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-toggle="edit-modal2">
+                                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                                </svg>
+                                                                <span class="sr-only">Close modal</span>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Modal body -->
+                                                        <form action="#" class="p-4 md:p-5">
+                                                            <div class="grid gap-4 mb-4 grid-cols-2">
+                                                                <div class="col-span-2">
+                                                                    <div class="max-w-md mx-auto mb-3">
+                                                                        <h2 class="text-2xl font-semibold mb-5">Picture</h2>
+                                                                        <input type="file" id="imageInput1" class="mb-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
+                                                                        <div class="mt-5">
+                                                                            <h3 class="text-xl font-semibold mb-2">Preview:</h3>
+                                                                            <img id="imagePreview1" class="max-w-full h-auto">
+                                                                        </div>
+                                                                    </div>
+                                                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                                                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Type product name" required="">
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Product Description</label>
+                                                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"></textarea>
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="price" class="text-sm font-medium text-gray-900 ">Stock</label>
+                                                                    <input type="number" name="price" id="price" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukkan Stok Barang" required="">
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                                                </svg>
+                                                                Edit Product
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
                                                 </svg>
@@ -426,15 +587,66 @@
 
                                     <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap ">
                                         <div class="flex items-center space-x-4">
-                                            <button type="button" data-drawer-target="drawer-update-product" data-drawer-show="drawer-update-product" aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-800">
+                                            <button type="button" data-modal-target="edit-modal3" data-modal-toggle="edit-modal3" data-drawer-target="drawer-update-product" data-drawer-show="drawer-update-product" aria-controls="drawer-update-product" class="py-2 px-3 flex items-center text-sm font-medium text-center text-black hover:text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-green-500 hover:bg-green-800">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                                                 </svg>
                                                 Edit
                                             </button>
-
-                                            <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal"  class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
+                                            <!-- Edit Pop up -->
+                                            <div id="edit-modal3" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                                <div class="relative p-4 w-full max-w-md max-h-full">
+                                                    <!-- Modal content -->
+                                                    <div class="relative bg-white rounded-lg shadow ">
+                                                        <!-- Modal header -->
+                                                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                                                            <h3 class="text-lg font-semibold text-gray-900 ">
+                                                                Edit Product
+                                                            </h3>
+                                                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center " data-modal-toggle="edit-modal3">
+                                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                                </svg>
+                                                                <span class="sr-only">Close modal</span>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Modal body -->
+                                                        <form action="#" class="p-4 md:p-5">
+                                                            <div class="grid gap-4 mb-4 grid-cols-2">
+                                                                <div class="col-span-2">
+                                                                    <div class="max-w-md mx-auto mb-3">
+                                                                        <h2 class="text-2xl font-semibold mb-5">Picture</h2>
+                                                                        <input type="file" id="imageInput1" class="mb-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
+                                                                        <div class="mt-5">
+                                                                            <h3 class="text-xl font-semibold mb-2">Preview:</h3>
+                                                                            <img id="imagePreview1" class="max-w-full h-auto">
+                                                                        </div>
+                                                                    </div>
+                                                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                                                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Type product name" required="">
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Product Description</label>
+                                                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"></textarea>
+                                                                </div>
+                                                                <div class="col-span-2">
+                                                                    <label for="price" class="text-sm font-medium text-gray-900 ">Stock</label>
+                                                                    <input type="number" name="price" id="price" class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukkan Stok Barang" required="">
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                                                </svg>
+                                                                Edit Product
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="flex items-center text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-3 py-2 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                     <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
                                                 </svg>
@@ -477,7 +689,7 @@
         </div>
     </main>
 
-
+    <script src="app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 </body>
 
