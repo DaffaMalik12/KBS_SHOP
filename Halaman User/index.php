@@ -25,8 +25,8 @@
   </style>
     <title>KBS_SHOP</title>
 </head>
-
 <body>
+
     <div class="container max-w-screen-xl transition-all md:transition-all lg:transition-all overflow-x-hidden">
         <!-- Navbar -->
         <nav class="bg-white" data-aos="fade-down">
@@ -100,72 +100,34 @@
         <section class="container max-w-full max-h-full lg:pb-10">
             <h3 class="text-center font-base text-lg pb-1 pt-8 font-myFont lg:text-center">Pemilihan Produk</h3>
             <h2 class="text-center font-bold text-2xl pb-12 font-myFont lg:text-center">STOK BARANG KAMI</h2>
-            <div class="px-6 mb-10 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
-            <!-- Card 1 -->
-            <div  class="flex flex-col mb-8 items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-right">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/car charger.jpg" alt="">
-                <div class="flex flex-col justify-between p-4  leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Car Charger</h5>
-                    <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
-                                Buy
-                        </a>   
-                        <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
-                            <h2>15</h2>
-                        </div>     
+            <?php
+                include "../koneksi.php";
+                $select_products = mysqli_query($koneksi, "SELECT * FROM `products`");
+                if(mysqli_num_rows($select_products) > 0){
+                    while($fetch_product = mysqli_fetch_assoc($select_products)){
+                ?>
+            <div class="px-6 mb-10 font-inter lg:flex flex sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
+                <!-- Card 1 -->
+                <div  class="flex flex-col mb-8 items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-right">
+                    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/<?php echo $fetch_product['image']; ?>" alt="">
+                    <div class="flex flex-col justify-between p-4  leading-normal">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><?php echo $fetch_product['name']; ?></h5>
+                        <p class="mb-3 font-normal text-gray-700"><?php echo $fetch_product['description']; ?></p>
+                        <div class="flex">
+                            <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
+                                    Buy
+                            </a>   
+                            <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
+                                <h2><?php echo $fetch_product['stock']; ?></h2>
+                            </div>     
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Card 2 -->
-            <div  class="flex flex-col mb-8 items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-right">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/headset.jpg" alt="">
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Headphone</h5>
-                    <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
-                                Buy
-                        </a>   
-                        <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
-                            <h2>15</h2>
-                        </div>     
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div  class="flex flex-col mb-8 items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100" data-aos="fade-left">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/otg usb.jpg" alt="">
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">OTG USB</h5>
-                    <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
-                                Buy
-                        </a>   
-                        <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
-                            <h2>15</h2>
-                        </div>     
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="flex flex-col mb-8 items-cent bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 " data-aos="fade-left">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/usb.jpg" alt="">
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">USB Cable</h5>
-                    <p class="mb-3 font-normal text-gray-700 ">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <div class="flex">
-                        <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
-                                Buy
-                        </a>   
-                        <div class="kotak w-16 h-10 inline-flex justify-center ml-5 hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
-                            <h2>15</h2>
-                        </div>     
-                    </div>
-                </div>
-            </div>
-            </div>
+            <?php
+            };
+         };
+         ?>
         </section>
         <!-- Akhir Jumbotron Stok Barang -->
 
