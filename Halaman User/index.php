@@ -26,7 +26,6 @@
     <title>KBS_SHOP</title>
 </head>
 <body>
-
     <div class="container max-w-screen-xl transition-all md:transition-all lg:transition-all overflow-x-hidden">
         <!-- Navbar -->
         <nav class="bg-white" data-aos="fade-down">
@@ -47,7 +46,7 @@
                             <a href="#" class="block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
                         </li>
                             <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Artikel</a>
+                                <a href="../Halaman Artikel/card.php" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Artikel</a>
                             </li>
                             <li>
                                 <a href="../login.php" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Admin</a>
@@ -100,6 +99,7 @@
         <section class="container max-w-full max-h-full lg:pb-10">
             <h3 class="text-center font-base text-lg pb-1 pt-8 font-myFont lg:text-center">Pemilihan Produk</h3>
             <h2 class="text-center font-bold text-2xl pb-12 font-myFont lg:text-center">STOK BARANG KAMI</h2>
+            <div class="lg:flex sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
             <?php
                 include "../koneksi.php";
                 $select_products = mysqli_query($koneksi, "SELECT * FROM `products`");
@@ -112,13 +112,13 @@
                     <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="../img/<?php echo $fetch_product['image']; ?>" alt="">
                     <div class="flex flex-col justify-between p-4  leading-normal">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><?php echo $fetch_product['name']; ?></h5>
-                        <p class="mb-3 font-normal text-gray-700"><?php echo $fetch_product['description']; ?></p>
+                        <p class="mb-3 font-normal text-gray-700 w-42 text-justify "><?php echo $fetch_product['description']; ?></p>
                         <div class="flex">
                             <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
                                     Buy
                             </a>   
-                            <div class="kotak w-16 h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
-                                <h2><?php echo $fetch_product['stock']; ?></h2>
+                            <div class="kotak w-auto h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">
+                                <h2>Rp.<?php echo $fetch_product['stock']; ?></h2>
                             </div>     
                         </div>
                     </div>
@@ -128,6 +128,7 @@
             };
          };
          ?>
+         </div>
         </section>
         <!-- Akhir Jumbotron Stok Barang -->
 
@@ -223,6 +224,15 @@
             </div>
         </section>
         <!-- Akhir Jumbotron Review Customer -->
+
+         <!-- Frame Map -->
+         <!-- <section class="w-auto h-auto mb-5 bg-gray-200">
+            <h1 class=" text-center font-poppins text-2xl font-bold pt-10">Lokasi Toko Kami</h1>
+         <div class="flex justify-center items-center">   
+         <iframe data-aos="fade-right" class="mt-10 mb-10 rounded-lg w-11/12 h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.9226833001019!2d106.7175235184617!3d-6.370254560946781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5f6b86b89e9%3A0xbff2a9766032e1ff!2sCafe%20Qoplak%2FPoci!5e0!3m2!1sid!2sid!4v1700551399090!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>   
+        </section> -->
+
 
         <!-- Footer -->
         <footer class="bg-white">

@@ -189,7 +189,7 @@ if(isset($_POST['update_product'])){
                                     <th scope="col" class="p-4">Product</th>
                                     <th scope="col" class="p-4">Description</th>
                                     <th scope="col" class="p-4">Stock</th>
-                                    <th scope="col" class="p-4">Last Update</th>
+                                    <th scope="col" class="p-4"></th>
                                     <th scope="col">
                                         <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="-ml-32 py-2 px-3 flex items-center text-sm font-medium text-center text-gray-900 hover:text-white focus:outline-none rounded-lg border border-gray-200  hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200  bg-blue-500 hover:bg-blue-800">
                                             <svg fill="currentColor" enable-background="new 0 0 512 512" class="h-4 w-4 mr-2 -ml-0.5" height="512px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -274,7 +274,7 @@ if(isset($_POST['update_product'])){
                                             <h3><?php echo $row['name']; ?></h3>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap "><?php echo $row['description']; ?></td>
+                                    <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"><?php echo $row['description']; ?></td>
 
                                     <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap ">
                                         <div class="flex items-center">
@@ -338,7 +338,7 @@ if(isset($_POST['update_product'])){
                                                                     <textarea name="update_p_description" value="<?php echo $fetch_edit['description']; ?>" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"></textarea>
                                                                 </div>
                                                                 <div class="col-span-2">
-                                                                    <label for="price" class="text-sm font-medium text-gray-900 ">Stock</label>
+                                                                    <label  class="text-sm font-medium text-gray-900 ">Stock</label>
                                                                     <input type="number" name="update_p_stock" value="<?php echo $fetch_edit['stock']; ?>"class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukkan Stok Barang" required="">
                                                                 </div>
                                                             </div>
