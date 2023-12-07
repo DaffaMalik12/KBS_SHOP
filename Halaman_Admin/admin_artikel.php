@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Admin Artikel</title>
 </head>
 <body>
 <?php
@@ -26,21 +26,30 @@ if(isset($_POST['add_artikel'])){
     $p_karya = mysqli_real_escape_string($koneksi, $_POST['p_karya']);
     $p_published = mysqli_real_escape_string($koneksi, $_POST['p_published']);
 
-    if(isset($_FILES['p_gambar']['judul'])) {
-        $p_gambar = $_FILES['p_gambar']['judul'];
-        $p_gambar_tmp_judul = $_FILES['p_gambar']['tmp_judul'];
-        $p_gambar_folder = '../img/'.$p_gambar;
-        // Memindahkan file gambar baru ke folder yang ditentukan
-        move_uploaded_file($p_image_tmp_name, $p_image_folder);
-    } else {
-        // Handle jika file gambar tidak diunggah
-        echo "File gambar tidak diunggah.";
-        // Berhenti atau lakukan tindakan lain sesuai kebutuhan
-        // exit;
+    if (isset($_FILES['p_gambar'])) {
+        $p_gambar = $_FILES['p_gambar'];
+        $p_gambar_tmp_judul = $_FILES['p_gambar']['tmp_name'];
+    
+        // Cek apakah ada error saat upload
+        if ($p_gambar['error'] == 0) {
+            // Pemeriksaan ekstensi file (contoh: hanya izinkan JPEG dan PNG)
+            $allowed_extensions = ['jpg', 'jpeg', 'png'];
+            $file_extension = pathinfo($p_gambar['name'], PATHINFO_EXTENSION);
+    
+            if (in_array(strtolower($file_extension), $allowed_extensions)) {
+                $p_gambar_folder = '../img/' . $p_gambar['name'];
+                move_uploaded_file($p_gambar_tmp_judul, $p_gambar_folder);
+    
+                // Lanjutkan dengan query ke database
+                $insert_query = mysqli_query($koneksi, "INSERT INTO `t_artikel` (judul, kategori, isi, karya, published, gambar) VALUES ('$p_judul', '$p_kategori', '$p_isi', '$p_karya', '$p_published', '$p_gambar_folder')") or die(mysqli_error($koneksi));
+            } else {
+                echo "Error: Ekstensi file tidak diizinkan.";
+            }
+        } else {
+            echo "Error saat mengunggah file gambar. Kode error: " . $p_gambar['error'];
+        }
     }
-
-    $insert_query = mysqli_query($koneksi, "INSERT INTO `t_artikel` (judul, kategori, isi, karya, published , gambar) VALUES ('$p_judul', '$p_kategori', '$p_isi', '$p_karya', '$p_published', '$p_gambar')") or die('query failed');
-
+   
     // Mengecek apakah query berhasil mengubah data di database
     if(mysqli_affected_rows($koneksi) > 0){
         // Mengarahkan halaman ke index.php dengan mengirim data message
@@ -82,22 +91,32 @@ $update_p_gambar_folder = '';
 if(isset($_POST['update_artikel'])){
     // Membersihkan input dari karakter spesial
     $update_p_id = $_POST['update_p_id']; 
-    $update_p_judul = $_POST['update_p_judul'];
-    $update_p_kategori = $_POST['update_p_kategori'];
-    $update_p_isi = $_POST['update_p_isi'];
+    $update_p_judul = mysqli_real_escape_string($koneksi, $_POST['update_p_judul']);
+    $update_p_kategori = mysqli_real_escape_string($koneksi, $_POST['update_p_kategori']);
+    $update_p_isi = mysqli_real_escape_string($koneksi, $_POST['update_p_isi']);
+    $update_p_karya = mysqli_real_escape_string($koneksi, $_POST['update_p_karya']);
+    $update_p_published = mysqli_real_escape_string($koneksi, $_POST['update_p_published']);
 
-    $stringQuery = "UPDATE `t_artikel` SET judul = '$update_p_judul', kategori = '$update_p_kategori', isi = '$update_p_isi', karya = '$update_p_karya', published = '$update_p_published'";
-    
+    $stringQuery = "UPDATE `t_artikel` SET judul = '$update_p_judul', kategori = '$update_p_kategori', isi = '$update_p_isi', karya = '$update_p_karya', published = '$update_p_published' ";
+
     // Mengecek apakah file gambar baru ada atau tidak
     if(isset($_FILES['update_p_gambar'])){
-        $update_p_gambar = $_FILES['update_p_gambar']['judul'];
-        $update_p_gambar_tmp_judul = $_FILES['update_p_gambar']['tmp_judul'];
+        $update_p_gambar = $_FILES['update_p_gambar']['name'];
+        $update_p_gambar_tmp_judul = $_FILES['update_p_gambar']['tmp_name'];
         $update_p_gambar_folder = '../img/'.$update_p_gambar;
 
         // Mengecek apakah nama file gambar baru kosong atau tidak
         if(!empty($update_p_gambar)){
-            // Jika kosong, gunakan nama file gambar lama sebagai default
-            $stringQuery .= ", gambar = '$update_p_gambar'";
+            // Pemeriksaan ekstensi file gambar (sesuaikan dengan tipe gambar yang diizinkan)
+            $allowed_extensions = ['jpg', 'jpeg', 'png'];
+            $file_extension = pathinfo($update_p_gambar, PATHINFO_EXTENSION);
+
+            if (in_array(strtolower($file_extension), $allowed_extensions)) {
+                // Jika kosong, gunakan nama file gambar lama sebagai default
+                $stringQuery .= ", gambar = '$update_p_gambar'";
+            } else {
+                $message[] = 'Error: Ekstensi file gambar tidak diizinkan.';
+            }
         }
     }
 
@@ -111,22 +130,23 @@ if(isset($_POST['update_artikel'])){
         if(is_uploaded_file($update_p_gambar_tmp_judul)){
             // Menghapus file gambar lama
             unlink($old_p_gambar_folder);
-            // Mengubah nama file gambar baru sesuai dengan id produk
-            $new_p_gambar = 'product_'.$update_p_id.'.jpg';
+            // Mengubah nama file gambar baru sesuai dengan id artikel
+            $new_p_gambar = 'article_'.$update_p_id.'.jpg';
             $new_p_gambar_folder = '../img/'.$new_p_gambar;
             // Memindahkan file gambar baru ke folder yang ditentukan
             move_uploaded_file($update_p_gambar_tmp_judul, $new_p_gambar_folder);
             // Mengupdate nama file gambar baru di database
             mysqli_query($koneksi, "UPDATE `t_artikel` SET gambar = '$new_p_gambar' WHERE id = '$update_p_id'");
         }
-        $message[] = 'product updated successfully';
-        header('location:stok.php');
+        $message[] = 'article updated successfully';
+        header('location: admin_artikel.php');
         exit; // Pastikan untuk keluar setelah melakukan redirect
     } else {
-        $message[] = 'product could not be updated';
+        $message[] = 'article could not be updated';
         // Tampilkan pesan error atau lakukan tindakan lain sesuai kebutuhan
     }
 }
+
 
 ?>
 <div class="container">
@@ -147,7 +167,7 @@ if(isset($_POST['update_artikel'])){
                 <h1 class="text-slate-400 text-center pt-8">Main Menu</h1>
                 <ul class="ml-3 mb-3 pt-5">
                     <li class="hover:bg-slate-600 hover:text-blue-500">
-                        <a href="#home" class="text-lg font-poppins font-medium"><i class="fa-solid fa-house mr-2"></i>Dashboard</a>
+                        <a href="index.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-house mr-2"></i>Dashboard</a>
                     </li>
                     <li class="mt-8  hover:bg-slate-600 hover:text-blue-500">
                         <a href="profile.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-users mr-2"></i>Profile</a>
@@ -226,7 +246,7 @@ if(isset($_POST['update_artikel'])){
                                             <input type="text" name="p_published" id="Published" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Published" required="">
                                         </div>
                                     </div>
-                                    <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    <button type="submit" name="add_artikel" value="add the artikel" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                         Tambah Artikel
                                     </button>
@@ -330,33 +350,33 @@ if(isset($_POST['update_artikel'])){
                                                                 <div class="col-span-2">
                                                                     <div class="max-w-md mx-auto mb-3">
                                                                         <h2 class="text-2xl font-semibold mb-5">Picture</h2>
-                                                                        <input type="file" id="imageInput3" name="update_p_image" accept="image/png, image/jpg, image/jpeg" class="mb-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
+                                                                        <input type="file" id="imageInput3" name="update_p_gambar" accept="image/png, image/jpg, image/jpeg" class="mb-3 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50">
                                                                         <div class="mt-5">
                                                                             <h3 class="text-xl font-semibold mb-2">Preview:</h3>
                                                                             <img id="imagePreview3" class="max-w-full h-auto">
                                                                         </div>
                                                                     </div>
-                                                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Judul</label>
-                                                                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukan Judul" required="">
+                                                                    <label for="judul" class="block mb-2 text-sm font-medium text-gray-900 ">Judul</label>
+                                                                        <input type="text" name="update_p_judul" value="<?php echo $fetch_edit["judul"] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukan Judul" required="">
                                                                     </div>
                                                                     <div class="col-span-2">
-                                                                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Kategori</label>
-                                                                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukan Kategori" required="">
+                                                                        <label for="Kategori" class="block mb-2 text-sm font-medium text-gray-900 ">Kategori</label>
+                                                                        <input type="text" name="update_p_kategori" value="<?php echo $fetch_edit["Kategori"] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukan Kategori" required="">
                                                                     </div>
                                                                     <div class="col-span-2">
-                                                                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Isi Artikel</label>
-                                                                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Masukan Isi Artikel"></textarea>                    
+                                                                        <label for="isi" class="block mb-2 text-sm font-medium text-gray-900 ">Isi Artikel</label>
+                                                                        <textarea name="update_p_isi" value="" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Masukan Isi Artikel"><?php echo $fetch_edit["isi"] ?></textarea>                    
                                                                     </div>
                                                                     <div class="col-span-2">
-                                                                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Karya</label>
-                                                                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Karya" required="">
+                                                                        <label for="karya" class="block mb-2 text-sm font-medium text-gray-900 ">Karya</label>
+                                                                        <input type="text" name="update_p_karya" value="<?php echo $fetch_edit["karya"] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Karya" required="">
                                                                     </div>
                                                                     <div class="col-span-2">
-                                                                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Published</label>
-                                                                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Published" required="">
+                                                                        <label for="Published" class="block mb-2 text-sm font-medium text-gray-900 ">Published</label>
+                                                                        <input type="text" name="update_p_published" value="<?php echo $fetch_edit["Published"] ?>"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Published" required="">
                                                                     </div>
                                                                 </div>
-                                                            <button type="submit" value="update the prodcut" name="update_product" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
+                                                            <button type="submit" value="update the artikel" name="update_artikel" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                                                     <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />

@@ -151,13 +151,13 @@ if(isset($_POST['update_product'])){
                         <a href="index.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-house mr-2"></i>Dashboard</a>
                     </li>
                     <li class="mt-8  hover:bg-slate-600 hover:text-blue-500">
-                        <a href="" class="text-lg font-poppins font-medium"><i class="fa-solid fa-users mr-2"></i>Profile</a>
+                        <a href="profile.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-users mr-2"></i>Profile</a>
                     </li>
                     <li class="mt-8  hover:bg-slate-600 hover:text-blue-500">
-                        <a href="" class="text-lg font-poppins font-medium"><i class="fa-solid fa-cart-shopping mr-2"></i>Stok Barang</a>
+                        <a href="#" class="text-lg font-poppins font-medium"><i class="fa-solid fa-cart-shopping mr-2"></i>Stok Barang</a>
                     </li>
                     <li class="mt-8  hover:bg-slate-600 hover:text-blue-500">
-                        <a href="" class="text-lg font-poppins font-medium"><i class="fa-solid fa-newspaper mr-2"></i></i>Kelola Artikel</a>
+                        <a href="admin_artikel.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-newspaper mr-2"></i></i>Kelola Artikel</a>
                     </li>
                 </ul>
             </div>
@@ -338,7 +338,7 @@ if(isset($_POST['update_product'])){
                                                                 </div>
                                                                 <div class="col-span-2">
                                                                     <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Product Description</label>
-                                                                    <textarea name="update_p_description" value="<?php echo $fetch_edit['description']; ?>" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"></textarea>
+                                                                    <textarea name="update_p_description" value="" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"><?php echo $fetch_edit['description']; ?></textarea>
                                                                 </div>
                                                                 <div class="col-span-2">
                                                                     <label  class="text-sm font-medium text-gray-900 ">Stock</label>
