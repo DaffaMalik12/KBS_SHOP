@@ -123,11 +123,11 @@ require '../koneksi.php'
 
             <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
                 <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
-                    <img src="https://source.unsplash.com/collection/1346951/150x150?sig=1" class="rounded-full shadow h-32 w-32">
+                    <img src="../img/1687436389517.jpg" class="rounded-full shadow h-32 w-32">
                 </div>
                 <div class="flex-1 flex flex-col justify-center md:justify-start">
-                    <p class="font-semibold text-2xl">David</p>
-                    <p class="pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel neque non libero suscipit suscipit eu eu urna.</p>
+                    <p class="font-semibold text-2xl">Muhammad Daffa Malik Akram</p>
+                    <p class="pt-2">Saya adalah seorang mahasiswa UIN JAKARTA yang bersemangat dalam dunia pengembangan web, dan situs web ini adalah wadah untuk membagikan proyek-proyek saya. Dengan latar belakang pendidikan saya dalam ilmu komputer dan hasrat saya dalam merancang dan membangun situs web yang menarik, saya berharap Anda dapat menemukan inspirasi dan melihat perkembangan saya sebagai pengembang web.</p>
                     <div class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
                         <a class="" href="#">
                             <i class="fab fa-facebook"></i>
