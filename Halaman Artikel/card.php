@@ -63,7 +63,7 @@
                 <div class="grid gap-4 ">
                     <a href="">
                         <div>
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
+                            <img class="h-auto max-w-full rounded-lg" src="../img/background.jpg" alt="">
                         </div>
                     </a>
                     <div class="grid grid-cols-5 gap-4">

@@ -27,6 +27,8 @@ if(isset($_POST['add_product'])){
         $p_image = $_FILES['p_image']['name'];
         $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
         $p_image_folder = '../img/'.$p_image;
+        // Memindahkan file gambar baru ke folder yang ditentukan
+        move_uploaded_file($p_image_tmp_name, $p_image_folder);
     } else {
         // Handle jika file gambar tidak diunggah
         echo "File gambar tidak diunggah.";
@@ -89,6 +91,7 @@ if(isset($_POST['update_product'])){
         $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
         $update_p_image_folder = '../img/'.$update_p_image;
 
+        
         // Mengecek apakah nama file gambar baru kosong atau tidak
         if(!empty($update_p_image)){
             // Jika kosong, gunakan nama file gambar lama sebagai default
@@ -192,13 +195,13 @@ if(isset($_POST['update_product'])){
                                     <th scope="col" class="p-4"></th>
                                     <th scope="col">
                                         <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="-ml-32 py-2 px-3 flex items-center text-sm font-medium text-center text-gray-900 hover:text-white focus:outline-none rounded-lg border border-gray-200  hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200  bg-blue-500 hover:bg-blue-800">
-                                            <svg fill="currentColor" enable-background="new 0 0 512 512" class="h-4 w-4 mr-2 -ml-0.5" height="512px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <svg fill="currentColor" enable-background="new 0 0 512 512" class="h-4 w-4 mr-2 -ml-0.5" height="32rem" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="32rem" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <path d="M256,512C114.625,512,0,397.391,0,256C0,114.609,114.625,0,256,0c141.391,0,256,114.609,256,256  C512,397.391,397.391,512,256,512z M256,64C149.969,64,64,149.969,64,256s85.969,192,192,192c106.047,0,192-85.969,192-192  S362.047,64,256,64z M288,384h-64v-96h-96v-64h96v-96h64v96h96v64h-96V384z" />
                                             </svg>
                                             Add Product
                                         </button>
                                         <!-- Main modal -->
-                                        <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                        <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-16px)] max-h-full">
                                             <div class="relative p-4 w-full max-w-md max-h-full">
                                                 <!-- Modal content -->
                                                 <div class="relative bg-white rounded-lg shadow ">
@@ -299,7 +302,7 @@ if(isset($_POST['update_product'])){
                                                 $fetch_edit = mysqli_fetch_array($edit_query);
                                             ?>
                                             <!-- Edit Pop up -->                                            
-                                            <div id="edit-modal" tabindex="-1" aria-hidden="true" class="overflow-y-auto overflow-x-hidden fixed flex top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                            <div id="edit-modal" tabindex="-1" aria-hidden="true" class="overflow-y-auto overflow-x-hidden fixed flex top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-16px)] max-h-full">
                                                 <div class="relative p-4 w-full max-w-md max-h-full">
                                                     <!-- Modal content -->
                                                     <div class="relative bg-white rounded-lg shadow ">
