@@ -52,7 +52,7 @@
                         <a href="stok.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-cart-shopping mr-2"></i>Stok Barang</a>
                     </li>
                     <li class="mt-8  hover:bg-slate-600 hover:text-blue-500">
-                        <a href="" class="text-lg font-poppins font-medium"><i class="fa-solid fa-newspaper mr-2"></i></i>Kelola Artikel</a>
+                        <a href="artikel.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-newspaper mr-2"></i></i>Kelola Artikel</a>
                     </li>
                 </ul>
             </div>
