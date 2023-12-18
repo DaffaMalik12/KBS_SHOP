@@ -6,7 +6,7 @@ require '../koneksi.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tailwind Blog Template</title>
+    <title>KBS Artikel</title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
@@ -33,8 +33,8 @@ require '../koneksi.php'
 
             <nav>
                 <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="#">Shop</a></li>
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
+                    <li><a class="hover:text-gray-200 hover:underline px-4" href="../Halaman User/index.php">Shop</a></li>
+                    <li><a class="hover:text-gray-200 hover:underline px-4" href="https://portofoliodaffamalik.000webhostapp.com/">About</a></li>
                 </ul>
             </nav>
 
