@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Admin Page</title>
 </head>
 <?php
@@ -30,7 +31,7 @@
                 <img src="../img/Screenshot_2023-09-11_182950-removebg-preview.png" alt="" class="w-20 p-4">
                 <a href="" class="pt-5 font-semibold text-2xl font-poppins">Admin</a>
                 <div class="ml-auto">
-                    <a href=""><i class="fa-solid fa-arrow-right-from-bracket text-4xl  pr-4"></i></a>
+                    <a href="../login.php"><i class="fa-solid fa-arrow-right-from-bracket text-4xl  pr-4"></i></a>
                     <a href=""><i class="fa-solid fa-circle-user text-5xl pt-3"></i></a>
                 </div>
             </div>
@@ -52,7 +53,7 @@
                         <a href="stok.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-cart-shopping mr-2"></i>Stok Barang</a>
                     </li>
                     <li class="mt-8  hover:bg-slate-600 hover:text-blue-500">
-                        <a href="artikel.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-newspaper mr-2"></i></i>Kelola Artikel</a>
+                        <a href="admin_artikel.php" class="text-lg font-poppins font-medium"><i class="fa-solid fa-newspaper mr-2"></i></i>Kelola Artikel</a>
                     </li>
                 </ul>
             </div>
@@ -74,27 +75,34 @@
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script>
-        const ctx = document.getElementById('myChart');
+        // Data untuk chart
+        var data = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            datasets: [{
+            data: [10, 15, 7, 12, 18],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area di bawah garis
+            borderColor: 'rgba(75, 192, 192, 1)', // Warna garis
+            borderWidth: 2 // Lebar garis
+            }]
+        };
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+        // Konfigurasi chart
+        var options = {
+            scales: {
+            y: {
+                beginAtZero: true
             }
+            }
+        };
+
+        // Membuat chart dengan ID 'myLineChart'
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
         });
     </script>
 
