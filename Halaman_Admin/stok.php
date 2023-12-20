@@ -144,7 +144,7 @@ if(isset($_POST['update_product'])){
     </header>
     <main>
         <div class="grid grid-cols-5 gap-4 h-screen">
-            <div class="col-span-1 shadow-2xl h-screen">
+            <div class="col-span-1 bg-slate-200 h-screen">
                 <h1 class="text-slate-400 text-center pt-8">Main Menu</h1>
                 <ul class="ml-3 mb-3 pt-5">
                     <li class="hover:bg-slate-600 hover:text-blue-500">
@@ -191,7 +191,7 @@ if(isset($_POST['update_product'])){
                                     <th scope="col" class="p-4">Image</th>
                                     <th scope="col" class="p-4">Product</th>
                                     <th scope="col" class="p-4">Description</th>
-                                    <th scope="col" class="p-4">Stock</th>
+                                    <th scope="col" class="p-4">Harga</th>
                                     <th scope="col" class="p-4"></th>
                                     <th scope="col">
                                         <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="-ml-32 py-2 px-3 flex items-center text-sm font-medium text-center text-gray-900 hover:text-white focus:outline-none rounded-lg border border-gray-200  hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200  bg-blue-500 hover:bg-blue-800">

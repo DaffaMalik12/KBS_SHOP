@@ -163,7 +163,7 @@ if(isset($_POST['update_artikel'])){
 
     <main>
         <div class="grid grid-cols-5 gap-4 h-screen">
-            <div class="col-span-1 shadow-2xl h-screen">
+            <div class="col-span-1 bg-slate-200 h-screen">
                 <h1 class="text-slate-400 text-center pt-8">Main Menu</h1>
                 <ul class="ml-3 mb-3 pt-5">
                     <li class="hover:bg-slate-600 hover:text-blue-500">

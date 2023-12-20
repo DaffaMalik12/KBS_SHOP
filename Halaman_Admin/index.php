@@ -39,9 +39,9 @@
     </header>
 
     <main>
-        <div class="grid grid-cols-5 gap-4 h-screen">
-            <div class="col-span-1 shadow-2xl h-screen">
-                <h1 class="text-slate-400 text-center pt-8">Main Menu</h1>
+        <div class="grid grid-cols-5 gap-4">
+            <div class="col-span-1 bg-slate-200 h-screen">
+                <h1 class="text-slate-800 text-center pt-8">Main Menu</h1>
                 <ul class="ml-3 mb-3 pt-5">
                     <li class="hover:bg-slate-600 hover:text-blue-500">
                         <a href="#home" class="text-lg font-poppins font-medium"><i class="fa-solid fa-house mr-2"></i>Dashboard</a>
@@ -67,45 +67,168 @@
                     <div class="float-right -mt-16 mr-20">
                         <img src="../img/foto kece.png" alt="" class="w-24">
                     </div>
-                    <div>
-                        <canvas id="myChart" width="600" height="250"></canvas>
+                    <?php
+                    // Koneksi ke database
+
+                    // Query untuk menghitung jumlah baris dari tabel t_artikel
+                    $query1 = "SELECT COUNT(*) as total_rows FROM t_artikel";
+                    $result1 = mysqli_query($koneksi, $query1);
+
+                    // Query untuk menghitung jumlah baris dari tabel products
+                    $query2 = "SELECT COUNT(*) as total_rows FROM products";
+                    $result2 = mysqli_query($koneksi, $query2);
+
+                    // Memeriksa apakah query pertama berhasil dijalankan
+                    if ($result1) {
+                        // Mengambil hasil query
+                        $row1 = mysqli_fetch_assoc($result1);
+
+                        
+                    } else {
+                        // Menampilkan pesan kesalahan jika query pertama tidak berhasil
+                        echo "Error: " . mysqli_error($koneksi);
+                    }
+
+                    // Memeriksa apakah query kedua berhasil dijalankan
+                    if ($result2) {
+                        // Mengambil hasil query
+                        $row2 = mysqli_fetch_assoc($result2);
+
+                        
+                    } else {
+                        // Menampilkan pesan kesalahan jika query kedua tidak berhasil
+                        echo "Error: " . mysqli_error($koneksi);
+                    }
+                    ?>
+                    
+                    <div class="flex gap-2 mt-12">
+                    <div class="w-52-sm mx-auto bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 p-6 box-border">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Data Barang</h5>
+                        <h1 class="text-gray-700 text-2xl font-semibold">Jumlah Data Pada Barang Yaitu: <?php echo $row2["total_rows"] ?></h1>
+                    </div>
+                    <div class="w-52-sm mx-auto bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 p-6 box-border">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Data Artikel</h5>
+                        <h1 class="text-gray-700 text-2xl font-semibold">Jumlah Data Pada Artikel Yaitu: <?php echo $row1["total_rows"]; ?></h1>
+                    </div>
+                    </div>
+                    <div class="mt-5">
+                        <canvas id="myChart" width="600" height="180"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    
-    <script>
-        // Data untuk chart
-        var data = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-            datasets: [{
-            data: [10, 15, 7, 12, 18],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna area di bawah garis
-            borderColor: 'rgba(75, 192, 192, 1)', // Warna garis
-            borderWidth: 2 // Lebar garis
-            }]
+     <script>
+        // Define required functions and variables
+        const inputs = {
+            min: -100,
+            max: 100,
+            count: 8,
+            decimals: 2,
+            continuity: 1
         };
 
-        // Konfigurasi chart
-        var options = {
-            scales: {
-            y: {
-                beginAtZero: true
-            }
+        // Placeholder for Utils object
+        const Utils = {
+            CHART_COLORS: {
+                red: 'rgb(255, 99, 132)',
+                blue: 'rgb(54, 162, 235)'
+                // Add more colors if needed
+            },
+            transparentize: (color) => {
+                // Implement transparentize logic
+                return color; // Placeholder logic, you may replace it with actual logic
+            },
+            months: (options) => {
+                // Implement months logic
+                return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
+            },
+            numbers: (options) => {
+                // Implement numbers logic
+                return [1, 2, 3, 4, 5, 6, 7, 8]; // Placeholder logic, you may replace it with actual logic
+            },
+            srand: (seed) => {
+                // Implement srand logic
             }
         };
 
-        // Membuat chart dengan ID 'myLineChart'
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myLineChart = new Chart(ctx, {
+        const generateLabels = () => {
+            return Utils.months({count: inputs.count});
+        };
+
+        const generateData = () => {
+            const data = [];
+            for (let i = 0; i < inputs.count; i++) {
+                data.push(Math.random() * (inputs.max - inputs.min) + inputs.min);
+            }
+            return data;
+        };
+
+        let smooth = false;
+
+        // Your provided code
+        const data = {
+            labels: generateLabels(),
+            datasets: [
+                {
+                    label: 'Data Barang',
+                    data: generateData(),
+                    borderColor: Utils.CHART_COLORS.red,
+                    backgroundColor: Utils.CHART_COLORS.red,
+                    fill: true
+                },
+                {
+                    label: 'Data Artikel',
+                    data: generateData(),
+                    borderColor: Utils.CHART_COLORS.blue,
+                    backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue),
+                    fill: true
+                }
+            ]
+        };
+
+        const config = {
             type: 'line',
             data: data,
-            options: options
-        });
-    </script>
+            options: {
+                plugins: {
+                    filler: {
+                        propagate: false,
+                    },
+                    title: {
+                        display: true,
+                        text: (ctx) => 'drawTime: ' + ctx.chart.options.plugins.filler.drawTime
+                    }
+                },
+                pointBackgroundColor: '#fff',
+                radius: 10,
+                interaction: {
+                    intersect: false,
+                }
+            },
+        };
 
+        const actions = [
+            {
+                name: 'Grafik Data',
+                handler: (chart) => {
+                    chart.options.plugins.filler.drawTime = '   ';
+                    chart.update();
+                }
+            }
+           
+        ];
+
+        // Initialize the Chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, config);
+
+        // Attach event listeners to buttons (replace with actual button IDs)
+        document.getElementById('drawBeforeDatasetDraw').addEventListener('click', () => actions[0].handler(myChart));
+        // ... (attach listeners for other buttons)
+    </script> 
+    
 </body>
 
 </html>
