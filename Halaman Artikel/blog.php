@@ -33,22 +33,22 @@ require '../koneksi.php'
 
             <nav>
                 <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="../Halaman User/index.php">Shop</a></li>
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="https://portofoliodaffamalik.000webhostapp.com/">About</a></li>
+                    <li><a class="hover:text-gray-200 hover:underline px-4" href="../Halaman User/index.php" target="_blank">Shop</a></li>
+                    <li><a class="hover:text-gray-200 hover:underline px-4" href="https://portofoliodaffamalik.000webhostapp.com/" target="_blank">About Creator</a></li>
                 </ul>
             </nav>
 
             <div class="flex items-center text-lg no-underline text-white pr-6">
-                <a class="" href="#">
+                <a class="" href="https://www.facebook.com/daffa.malik.5055/" target="_blank">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://www.instagram.com/muhamad_daffa_malik/" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="pl-6" href="#">
-                    <i class="fab fa-twitter"></i>
+                <a class="pl-6" href="https://github.com/DaffaMalik12" target="_blank">
+                    <i class="fab fa-github"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://www.linkedin.com/in/muhammad-daffa-malik-akram/" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
@@ -63,7 +63,7 @@ require '../koneksi.php'
                 KBS Article
             </a>
             <p class="text-lg text-gray-600">
-                Lorem Ipsum Dolor Sit Amet
+                Artikel yang Berkualitas
             </p>
         </div>
     </header>
@@ -125,7 +125,7 @@ require '../koneksi.php'
 
             <div class="w-full bg-white shadow flex flex-col my-4 p-6">
                 <p class="text-xl font-semibold pb-5">About Us</p>
-                <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                <p class="pb-2">Terima kasih telah mengunjungi Artikel online web company saya! Saya senang Anda berada di sini, dan saya ingin mengajak Anda untuk bergabung dalam perjalanan saya melalui media sosial. Dapatkan pembaruan langsung, konten eksklusif, dan inspirasi terbaru dalam dunia bisnis accessoris gadget</p>
                 <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
                     Get to know us
                 </a>
