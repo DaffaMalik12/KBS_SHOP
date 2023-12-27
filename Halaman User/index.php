@@ -81,13 +81,13 @@
                 <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl lg:px-16">KBS_SHOP</h1>
                 <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:w-3/4">Apa yang bikin kita beda? Selain produk berkualitas tinggi, kita juga punya stok barang yang selalu ready. Jadi, kamu bisa belanja dengan tenang tanpa harus khawatir kehabisan. Plus, harganya juga bersahabat banget sama dompet kamu. Gak ada lagi alasan buat gak upgrade peralatan teknologimu!</p>
                 <div class=" flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-                    <a href="#" class="inline-flex lg:ml-16 items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-[#FD6D6D] FD6D6D hover:bg-red-600 focus:ring-4 focus:ring-blue-300 ">
+                    <a href="https://www.lazada.co.id/shop/kubermut-store/?spm=a2o4j.pdp_revamp.seller.1.232d63124w1YCW&itemId=6285230116&channelSource=pdp" target="_blank" class="inline-flex lg:ml-16 items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-[#FD6D6D] FD6D6D hover:bg-red-600 focus:ring-4 focus:ring-blue-300 ">
                         Learn More
                         <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                         </svg>
                     </a>
-                    <a href="#" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    <a href="../Halaman Artikel/blog.php" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
                         Artikel
                     </a>  
                 </div>
@@ -114,7 +114,7 @@
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><?php echo $fetch_product['name']; ?></h5>
                         <p class="mb-3 font-normal text-gray-700 w-42 text-justify "><?php echo $fetch_product['description']; ?></p>
                         <div class="flex">
-                            <a href="" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
+                            <a href="<?php echo $fetch_product['link']; ?>"  target="_blank" class="w-28 h-10 rounded-lg bg-[#6C70DD] text-center font-poppins pt-1 text-lg text-black hover:bg-purple-700">
                                     Buy
                             </a>   
                             <div class="kotak w-auto h-10 inline-flex ml-5 justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-black rounded-lg border border-black ">

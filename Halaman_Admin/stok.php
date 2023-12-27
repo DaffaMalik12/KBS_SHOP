@@ -22,6 +22,7 @@ if(isset($_POST['add_product'])){
     $p_name = mysqli_real_escape_string($koneksi, $_POST['p_name']);
     $p_description = mysqli_real_escape_string($koneksi, $_POST['p_description']);
     $p_stock = mysqli_real_escape_string($koneksi, $_POST['p_stock']);
+    $p_link = mysqli_real_escape_string($koneksi, $_POST['p_link']);
 
     if(isset($_FILES['p_image']['name'])) {
         $p_image = $_FILES['p_image']['name'];
@@ -36,7 +37,7 @@ if(isset($_POST['add_product'])){
         // exit;
     }
 
-    $insert_query = mysqli_query($koneksi, "INSERT INTO `products` (name, description, stock, image) VALUES ('$p_name', '$p_description', '$p_stock', '$p_image')") or die('query failed');
+    $insert_query = mysqli_query($koneksi, "INSERT INTO `products` (name, description, stock, image, link) VALUES ('$p_name', '$p_description', '$p_stock', '$p_image','$p_link')") or die('query failed');
 
     // Mengecek apakah query berhasil mengubah data di database
     if(mysqli_affected_rows($koneksi) > 0){
@@ -82,8 +83,9 @@ if(isset($_POST['update_product'])){
     $update_p_name = $_POST['update_p_name'];
     $update_p_description = $_POST['update_p_description'];
     $update_p_stock = $_POST['update_p_stock'];
+    $update_p_link = $_POST['update_p_link'];
 
-    $stringQuery = "UPDATE `products` SET name = '$update_p_name', description = '$update_p_description', stock = '$update_p_stock'";
+    $stringQuery = "UPDATE `products` SET name = '$update_p_name', description = '$update_p_description', stock = '$update_p_stock' , link = '$update_p_link'";
     
     // Mengecek apakah file gambar baru ada atau tidak
     if(isset($_FILES['update_p_image'])){
@@ -237,8 +239,12 @@ if(isset($_POST['update_product'])){
                                                                 <textarea id="description" name="p_description" required rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"></textarea>
                                                             </div>
                                                             <div class="col-span-2">
-                                                                <label for="price" class="text-sm font-medium text-gray-900 ">Stock</label>
+                                                                <label for="price" class="text-sm font-medium text-gray-900 ">Harga</label>
                                                                 <input type="number" name="p_stock" id="stock" required class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukkan Stok Barang" required="">
+                                                            </div>
+                                                            <div class="col-span-2">
+                                                            <label for="link" class="block mb-2 text-sm font-medium text-gray-900 ">link</label>
+                                                                <input type="text" name="p_link" id="link" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Type link" required="">
                                                             </div>
                                                         </div>
                                                         <button type="submit" name="add_product" value="add the product" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
@@ -341,9 +347,13 @@ if(isset($_POST['update_product'])){
                                                                     <textarea name="update_p_description" value="" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Write product description here"><?php echo $fetch_edit['description']; ?></textarea>
                                                                 </div>
                                                                 <div class="col-span-2">
-                                                                    <label  class="text-sm font-medium text-gray-900 ">Stock</label>
+                                                                    <label  class="text-sm font-medium text-gray-900 ">Harga</label>
                                                                     <input type="number" name="update_p_stock" value="<?php echo $fetch_edit['stock']; ?>"class="bg-gray-50 border mt-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Masukkan Stok Barang" required="">
                                                                 </div>
+                                                                <div class="col-span-2">
+                                                                <label for="link" class="block mb-2 text-sm font-medium text-gray-900 ">link</label>
+                                                                <input type="text" name="update_p_link" id="update_p_link" value="<?php echo $fetch_edit['link'] ?>" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="Type link" required="">
+                                                            </div>
                                                             </div>
                                                             <button type="submit" value="update the prodcut" name="update_product" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 -ml-0.5" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
